@@ -1,0 +1,19 @@
+---
+- name: Copy systemd configuration
+  become: yes
+  template:
+    src: systemd.service
+    dest: /etc/systemd/system/{{ docker_compose_service_name }}.service
+  register: docker_compose_service_changed
+  notify: restart service
+
+- name: Reload systemd daemon
+  become: yes
+  command: /bin/systemctl daemon-reload
+  when: docker_compose_service_changed.changed
+
+- name: Enable systemd service
+  become: yes
+  service:
+    name: "{{ docker_compose_service_name }}"
+    enabled: true

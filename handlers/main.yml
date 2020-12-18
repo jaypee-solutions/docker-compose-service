@@ -1,0 +1,6 @@
+---
+- name: restart service
+  become: yes
+  service:
+    name: "{{ docker_compose_service_name }}"
+    state: restarted
