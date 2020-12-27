@@ -9,8 +9,8 @@ Type=simple
 
 WorkingDirectory={{ docker_compose_service_basedir }}
 
-ExecStartPre=/usr/local/bin/docker-compose rm --force
-ExecStart=/usr/local/bin/docker-compose up
+ExecStartPre=/usr/bin/docker-compose rm --force
+ExecStart=/usr/bin/docker-compose up
 
 Restart=on-failure
 
