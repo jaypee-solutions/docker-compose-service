@@ -1,0 +1,21 @@
+---
+
+dependencies: []
+
+galaxy_info:
+
+  role_name:           docker-compose-service
+  author:              Levitron
+  company:             JayPee Solutions
+  description:         Setup docker-compsed based app as service
+  license:             none
+  min_ansible_version: 2.4.0
+  issue_tracker_url:   https://github.com/Levitron/issues
+  platforms:
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+        - buster
+  galaxy_tags:
+    - system
