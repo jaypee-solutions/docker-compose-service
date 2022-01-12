@@ -3,3 +3,7 @@
 - docker_compose_service_name: The service name
 - docker_compose_service_basedir: The directory of the service containing docker-compose.yml
 - docker_compose_service_respawn: Define if respawn should be enabled
+
+## Defaults
+
+- docker_compose_executable: /usr/bin/docker-compose
