@@ -10,7 +10,7 @@ Type=simple
 WorkingDirectory={{ docker_compose_service_basedir }}
 
 ExecStartPre={{ docker_compose_executable }} rm --force
-ExecStart={{ docker_compose_executable }} up
+ExecStart={{ docker_compose_executable }} up --env-file 
 
 Restart=on-failure
 
