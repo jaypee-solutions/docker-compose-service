@@ -1,1 +1,2 @@
+---
 docker_compose_executable: /usr/bin/docker-compose
