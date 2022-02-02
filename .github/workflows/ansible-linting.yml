@@ -1,6 +1,6 @@
-name: Ansible Linting
+name: Ansible Lint
 
-on: [push, pull_request]
+on: [push, pull_request]  # yamllint disable-line rule:truthy
 
 jobs:
   build:
@@ -13,7 +13,20 @@ jobs:
 
     - name: Lint Ansible Playbook
       # replace "master" with any valid ref
-      uses: ansible/ansible-lint-action@v4.1.0
+      uses: ansible/ansible-lint-action@master
       with:
-        targets: ""
-        args: ""
+        # [required]
+        # Paths to ansible files (i.e., playbooks, tasks, handlers etc..)
+        # or valid Ansible directories according to the Ansible role
+        # directory structure.
+        # If you want to lint multiple ansible files, use the following syntax
+        # targets: |
+        #   playbook_1.yml
+        #   playbook_2.yml
+        targets: "."
+        # [optional]
+        # Arguments to override a package and its version to be set explicitly.
+        # Must follow the example syntax.
+        override-deps: |
+          ansible==2.9
+          ansible-lint==4.2.0
