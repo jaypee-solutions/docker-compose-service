@@ -14,5 +14,4 @@ jobs:
           targets: |
             tasks/main.yml
           override-deps: |
-            ansible==2.10
-            ansible-lint==4.2.0
+            ansible-lint[core]==4.2.0
