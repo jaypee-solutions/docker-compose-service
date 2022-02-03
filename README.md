@@ -1,4 +1,5 @@
 [![Yamllint](https://github.com/jaypee-solutions/docker-compose-service/actions/workflows/yamllint.yml/badge.svg)](https://github.com/jaypee-solutions/docker-compose-service/actions/workflows/yamllint.yml)
+[![Ansible Lint](https://github.com/jaypee-solutions/docker-compose-service/actions/workflows/ansible-linting.yml/badge.svg)](https://github.com/jaypee-solutions/docker-compose-service/actions/workflows/ansible-linting.yml)
 
 # Variables
 
