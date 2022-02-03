@@ -1,3 +1,5 @@
+[![Yamllint](https://github.com/jaypee-solutions/docker-compose-service/actions/workflows/yamllint.yml/badge.svg)](https://github.com/jaypee-solutions/docker-compose-service/actions/workflows/yamllint.yml)
+
 # Variables
 
 - docker_compose_service_name: The service name
