@@ -6,4 +6,4 @@
     path: "{{ docker_compose_service_basedir }}"
     state: directory
 
-- include: "{{ ansible_service_mgr }}.yml"
+- ansible.builtin.include_tasks: "{{ ansible_service_mgr }}.yml"
