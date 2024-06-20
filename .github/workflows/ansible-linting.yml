@@ -12,6 +12,6 @@ jobs:
         uses: ansible/ansible-lint-action@master
         with:
           targets: |
-            tasks/main.yml
+            .
           override-deps: |
             ansible-lint[core]==4.2.0
