@@ -1,6 +1,6 @@
 ---
 - name: restart service
   become: true
-  service:
+  ansible.builtin.service:
     name: "{{ docker_compose_service_name }}"
     state: restarted

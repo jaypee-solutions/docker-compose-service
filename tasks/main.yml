@@ -2,7 +2,7 @@
 
 - name: "Ensure {{ docker_compose_service_basedir }}"
   become: true
-  file:
+  ansible.builtin.file:
     path: "{{ docker_compose_service_basedir }}"
     state: directory
 

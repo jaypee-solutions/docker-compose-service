@@ -1,7 +1,7 @@
 ---
 - name: Copy systemd configuration
   become: true
-  template:
+  ansible.builtin.template:
     src: systemd.service
     dest: /etc/systemd/system/{{ docker_compose_service_name }}.service
   register: docker_compose_service_changed
@@ -9,11 +9,11 @@
 
 - name: Reload systemd daemon
   become: true
-  command: /bin/systemctl daemon-reload
+  ansible.builtin.command: /bin/systemctl daemon-reload
   when: docker_compose_service_changed.changed
 
 - name: Enable systemd service
   become: true
-  service:
+  ansible.builtin.service:
     name: "{{ docker_compose_service_name }}"
     enabled: true
