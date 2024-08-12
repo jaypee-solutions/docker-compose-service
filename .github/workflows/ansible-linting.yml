@@ -1,9 +1,9 @@
 ---
 # .github/workflows/ansible-lint.yml
-name: ansible-lint
+name: ansiblelint
 on:
   pull_request:
-    branches: ["main", "stable", "release/v*"]
+    branches: ['main', 'stable', 'release/v*']
 jobs:
   build:
     name: Ansible Lint
