@@ -4,8 +4,9 @@ dependencies: []
 
 galaxy_info:
 
+  namespace: jaypee_solutions
   role_name: docker-compose-service
-  author: jaypee-solutions
+  author: JayPee
   company: JayPee Solutions
   description: Setup docker-compsed based app as service
   license: none
