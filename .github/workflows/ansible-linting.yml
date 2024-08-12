@@ -1,17 +1,13 @@
----
-
-name: Ansible Lint
-on: [push, pull_request]  # yamllint disable-line rule:truthy
+# .github/workflows/ansible-lint.yml
+name: ansible-lint
+on:
+  pull_request:
+    branches: ["main", "stable", "release/v*"]
 jobs:
-  ansiblelint:
+  build:
+    name: Ansible Lint # Naming the build is important to use it as a status check
     runs-on: ubuntu-latest
     steps:
-      - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v2
-      - name: Lint Ansible Playbook
-        uses: ansible/ansible-lint-action@main
-        with:
-          targets: |
-            tasks/main.yml
-          override-deps: |
-            ansible-lint[core]==4.2.0
+      - uses: actions/checkout@v4
+      - name: Run ansible-lint
+        uses: ansible/ansible-lint@main # or version tag instead of 'main'
