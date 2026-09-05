@@ -9,10 +9,8 @@
 
 - name: Reload systemd daemon
   become: true
-  ansible.builtin.service:
+  ansible.builtin.systemd:
     daemon_reload: true
-    name: "{{ docker_compose_service_name }}"
-    state: restarted
   when: docker_compose_service_changed.changed
 
 - name: Enable systemd service

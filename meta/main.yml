@@ -9,9 +9,9 @@ galaxy_info:
   author: JayPee
   company: JayPee Solutions
   description: Setup docker-compsed based app as service
-  license: none
+  license: MIT
   min_ansible_version: 2.4.0
-  issue_tracker_url: https://github.com/jaypee-solutions/issues
+  issue_tracker_url: https://github.com/jaypee-solutions/docker-compose-service/issues
   platforms:
     - name: Debian
       versions:
