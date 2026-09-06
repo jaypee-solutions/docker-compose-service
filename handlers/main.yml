@@ -1,4 +1,9 @@
 ---
+- name: Reload systemd daemon
+  become: true
+  ansible.builtin.systemd:
+    daemon_reload: true
+
 - name: Restart Service
   become: true
   ansible.builtin.service:

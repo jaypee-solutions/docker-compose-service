@@ -1,7 +1,7 @@
 ---
-# .github/workflows/ansible-lint.yml
+# .github/workflows/ansible-linting.yml
 name: ansiblelint
-on:
+on:  # yamllint disable-line rule:truthy
   pull_request:
     branches: ['main', 'stable', 'release/v*']
 jobs:
@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run ansible-lint
-        uses: ansible/ansible-lint@main
+        uses: ansible/ansible-lint@v26.8.0

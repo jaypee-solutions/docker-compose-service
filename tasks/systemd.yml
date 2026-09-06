@@ -4,14 +4,10 @@
   ansible.builtin.template:
     src: systemd.service
     dest: /etc/systemd/system/{{ docker_compose_service_name }}.service
-  register: docker_compose_service_changed
-  notify: Restart Service
-
-- name: Reload systemd daemon
-  become: true
-  ansible.builtin.systemd:
-    daemon_reload: true
-  when: docker_compose_service_changed.changed
+    mode: "0644"
+  notify:
+    - Reload systemd daemon
+    - Restart Service
 
 - name: Enable systemd service
   become: true
