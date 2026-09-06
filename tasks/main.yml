@@ -2,8 +2,11 @@
 
 - name: "Ensure {{ docker_compose_service_basedir }}"
   become: true
-  file:
+  ansible.builtin.file:
     path: "{{ docker_compose_service_basedir }}"
     state: directory
+    mode: "0755"
 
-- ansible.builtin.include_tasks: "{{ ansible_service_mgr }}.yml"
+- name: "Include tasks for {{ ansible_service_mgr }}"
+  become: true
+  ansible.builtin.include_tasks: "{{ ansible_service_mgr }}.yml"
